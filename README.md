@@ -21,7 +21,7 @@ FishEye est un sites de photographe en freelance qui proposent leurs services. N
 - Liste de tous les photographes avec leur nom, leur slogan, leur localisation, leur prix/heure et une image miniature de leur choix.
 - Lorsque l'utilisateur clique sur la vignette d'un photographe, il est amené à sa page.
 
-**Pages des photographes (généré dynamiquement en fonction du photographe) **
+**Pages des photographes (généré dynamiquement en fonction du photographe)**
 - Affiche une galerie des travaux du photographe.
 - Les photographes peuvent montrer à la fois des photos et des vidéos.
 - Chaque média comprend un titre et un nombre de likes.
