@@ -1,12 +1,3 @@
-// Récupère les données du fichier json et les retourne dans le bon format
-// async function getPhotographers() {
-//   const res = await fetch('data/photographers.json');
-//   const data = await res.json();
-//   const photographers = data;
-//   console.log(photographers);
-//   return photographers;
-// }
-
 import { photographerFactory } from '../factories/photographer.js';
 import { getPhotographers } from '../utils/api.js';
 
@@ -23,7 +14,6 @@ async function displayData(photographers) {
 }
 
 async function init() {
-  // Récupère les datas des photographes
   const { photographers } = await getPhotographers();
   displayData(photographers);
 }

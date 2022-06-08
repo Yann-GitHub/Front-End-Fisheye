@@ -10,29 +10,6 @@ function getParameterId(parameterName) {
 const photographerId = getParameterId('id'); // Stock la valeur de ‘id’
 console.log(photographerId);
 
-/// ////////// test //////////////
-
-// Récupère les données du fichier json et les retourne dans le bon format
-// async function getPhotographers() {
-//   const res = await fetch('data/photographers.json');
-//   const data = await res.json();
-//   const photographers = data;
-//   console.log(photographers);
-//   return photographers;
-// }
-
-//
-// async function displayData(photographers) {
-//   const photographHeader = document.querySelector('.photograph-header');
-
-//   photographers.forEach((photographer) => {
-//     const photographerModel = photographerFactory(photographer);
-//     const userHeaderDOM = photographerModel.getUserHeaderDOM();
-//     photographHeader.innerHTML = userHeaderDOM;
-//     console.log(photographerModel);
-//   });
-// }
-
 async function displayData(photographers) {
   const photographHeader = document.querySelector('.photograph-header');
 
