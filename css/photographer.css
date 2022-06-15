@@ -1,7 +1,4 @@
-#contact_modal {
-  display: none;
-}
-
+/************** PHOTOGRAPHER HEADER SECTION **************/
 .photograph-header {
   display: flex;
   justify-content: space-between;
@@ -13,8 +10,8 @@
   padding-right: 2.5rem;
 }
 
-.photographer-infos {
-}
+/* .photographer-infos {
+} */
 
 .photographer-infos h2 {
   color: #d3573c;
@@ -23,12 +20,12 @@
   margin-bottom: 0px;
 }
 
-.photographer-infos p:first-of-type {
+.photographer-infos p.photographer-city {
   color: #901c1c;
   font-size: 1.4rem;
 }
 
-.photographer-infos p:last-of-type {
+.photographer-infos p.photographer-tagline {
   color: rgb(54, 53, 53);
 }
 
@@ -52,6 +49,67 @@
   border-radius: 50%;
 }
 
+/******** PHOTOGRAPHER GRID SECTION *********/
+#photographer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  justify-content: space-evenly;
+  /* margin: 0 auto; */
+  /* width: 80vw; */
+  margin: 0 100px;
+}
+
+.card {
+  width: 350px;
+}
+
+.card img {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.card-video {
+  display: block;
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  color: #901c1c;
+  font-size: 20px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+}
+
+.card-content > h3 {
+  margin: 0;
+}
+
+.heart-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart-wrapper > p {
+  /* padding-right: 20px; */
+  margin: 0;
+  margin-right: 30px;
+}
+
+.heart-wrapper .heart {
+  position: absolute;
+  right: 0;
+}
+
+/*************** MODAL SECTION ****************/
 .modal {
   border-radius: 5px;
   background-color: #db8876;
@@ -62,6 +120,10 @@
   justify-content: space-between;
   padding: 35px;
   margin: auto;
+}
+
+#contact_modal {
+  display: none;
 }
 
 .modal header {
