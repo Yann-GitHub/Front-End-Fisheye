@@ -109,6 +109,30 @@
   right: 0;
 }
 
+.heart-wrapper .heart-plain.hidden {
+  opacity: 0;
+}
+
+/*************** COUNTER LIKES AND PRICE SECTION ****************/
+
+.counter-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: #db8876;
+  width: 375px;
+  height: 70px;
+  padding-left: 34px;
+  padding-right: 34px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  font-size: 24px;
+  font-weight: 500;
+}
+
 /*************** MODAL SECTION ****************/
 .modal {
   border-radius: 5px;

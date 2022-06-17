@@ -1,3 +1,6 @@
+// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html
+// Les datas sont d'abord assignées à des variables
+// Les différentes méthodes correspondent aux différents templates dédiés aux différentes sections de la page html (header, card, compteur globlal de likes)
 export function photographerFactory(data) {
   const { name, portrait, city, country, tagline, price, id } = data;
 
@@ -42,5 +45,19 @@ export function photographerFactory(data) {
     return templatePhotographHeader;
   }
 
-  return { name, picture, getUserCardDOM, getUserHeaderDOM };
+  function getUserLikesPrice() {
+    const templateLikesPrice = `
+    <div>
+      <span class="counter"></span>
+      <i class="fas fa-heart heart"></i>
+    </div>
+    <div>
+      <span>${price}€ / jour</span>
+    </div>
+    `;
+
+    return templateLikesPrice;
+  }
+
+  return { name, picture, getUserCardDOM, getUserHeaderDOM, getUserLikesPrice };
 }

@@ -13,7 +13,7 @@ export function mediaFactory(data) {
         <div class="heart-wrapper">
           <p>${likes}</p>
           <i class="far fa-heart heart"></i>
-          <i class="fas fa-heart heart"></i>
+          <i class="fas fa-heart heart heart-plain hidden"></i>
         </div>
       </div>
     </article>
@@ -33,7 +33,7 @@ export function mediaFactory(data) {
         <div class="heart-wrapper">
           <p>${likes}</p>
           <i class="far fa-heart heart"></i>
-          <i class="fas fa-heart heart"></i>
+          <i class="fas fa-heart heart heart-plain hidden"></i>
         </div>
       </div>
     </article>
