@@ -3,6 +3,7 @@ import { getPhotographers } from '../utils/api.js';
 import { photographerFactory } from '../factories/photographer.js';
 import { mediaFactory } from '../factories/media.js';
 import { likeManagement } from '../utils/likeCounter.js';
+import { modal } from '../utils/contactForm.js';
 
 // Fonction permet de récuperer la valeur ds le query string de l'URL
 // Puis on stocke la valeur de l'id ds une variable (ex: ?id=243)
@@ -70,6 +71,7 @@ async function init() {
   const photographerById = photographers.find(
     (el) => el.id === photographerUrlId
   );
+  // console.log(photographerById);
 
   const mediaById = media.filter(
     (el) => el.photographerId === photographerUrlId
@@ -88,6 +90,9 @@ async function init() {
   displayMedia(mediaById);
 
   likeManagement();
+
+  const photographerName = photographerById.name;
+  modal(photographerName);
 }
 
 init();
