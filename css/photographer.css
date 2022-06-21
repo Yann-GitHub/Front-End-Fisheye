@@ -204,3 +204,33 @@ form input {
   font-size: 2rem;
   padding-left: 20px;
 }
+
+/*************** TRI/SORT SECTION ****************/
+
+.sort-images {
+  margin: 0 100px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+.sort-images > label {
+  margin-right: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.sortSelect {
+  width: 170px;
+  height: 60px;
+  padding: 20px;
+  font-size: 18px;
+  color: white;
+  font-weight: 600;
+  background-color: #901c1c;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.sortOption {
+  background-color: aqua;
+}

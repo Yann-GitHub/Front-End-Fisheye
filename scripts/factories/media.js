@@ -6,7 +6,7 @@ export function mediaFactory(data) {
 
   function getUserImageCardDOM() {
     const templatePhotographerImage = `
-    <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}">
+    <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
       <img src="${photographerImage}" class="card-image" />
       <div class="card-content">
         <h3>${title}</h3>
@@ -24,7 +24,7 @@ export function mediaFactory(data) {
 
   function getUserVideoCardDOM() {
     const templatePhotographerVideo = `
-    <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}">
+    <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
       <video class="card-video">
         <source src="${photographerVideo}" type="video/mp4" />
       </video>

@@ -4,6 +4,7 @@ import { photographerFactory } from '../factories/photographer.js';
 import { mediaFactory } from '../factories/media.js';
 import { likeManagement } from '../utils/likeCounter.js';
 import { modal } from '../utils/contactForm.js';
+import { sortMedias } from '../utils/sortMedias.js';
 
 // Fonction permet de récuperer la valeur ds le query string de l'URL
 // Puis on stocke la valeur de l'id ds une variable (ex: ?id=243)
@@ -90,6 +91,8 @@ async function init() {
   displayMedia(mediaById);
 
   likeManagement();
+
+  sortMedias();
 
   const photographerName = photographerById.name;
   modal(photographerName);
