@@ -1,3 +1,6 @@
+// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html via la fonction displayData
+// Les datas sont d'abord assignées à des variables
+// Les différentes méthodes correspondent aux différents templates dédiés aux différent types de medias (images, videos)
 export function mediaFactory(data) {
   const { date, id, image, likes, photographerId, price, title, video } = data;
 
@@ -7,7 +10,7 @@ export function mediaFactory(data) {
   function getUserImageCardDOM() {
     const templatePhotographerImage = `
     <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
-      <img src="${photographerImage}" class="card-image" />
+      <img src="${photographerImage}" class="card-image" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
       <div class="card-content">
         <h3>${title}</h3>
         <div class="heart-wrapper">
@@ -25,8 +28,8 @@ export function mediaFactory(data) {
   function getUserVideoCardDOM() {
     const templatePhotographerVideo = `
     <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
-      <video class="card-video">
-        <source src="${photographerVideo}" type="video/mp4" />
+      <video class="card-video" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
+        <source src="${photographerVideo}" type="video/mp4" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
       </video>
       <div class="card-content">
         <h3>${title}</h3>

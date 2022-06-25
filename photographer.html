@@ -84,7 +84,24 @@
       </div>
     </div>
     <div class="counter-wrapper"></div>
-    <!-- <script src="./scripts/utils/contactForm.js"></script> -->
+
+    <div class="lightbox" id="lightbox-section">
+      <div class="lightbox-wrapper">
+        <i id="lightbox-prev" class="fas fa-chevron-left"></i>
+        <div id="lightbox-media">
+          <img id="lightbox-image" src="" />
+          <video id="lightbox-video" controls autoplay loop muted>
+            <source id="video" src="" type="video/mp4" />
+          </video>
+          <p id="lightbox-title">Ceci est un test, that's it!</p>
+        </div>
+
+        <div class="lightbox-aside">
+          <img id="close-lightbox" src="./assets/icons/close.svg" />
+          <i id="lightbox-next" class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </div>
     <script src="scripts/pages/photographer.js" type="module"></script>
   </body>
 </html>

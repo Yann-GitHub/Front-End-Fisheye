@@ -5,6 +5,7 @@ import { mediaFactory } from '../factories/media.js';
 import { likeManagement } from '../utils/likeCounter.js';
 import { modal } from '../utils/contactForm.js';
 import { sortMedias } from '../utils/sortMedias.js';
+import { lightbox } from '../utils/lightbox.js';
 
 // Fonction permet de récuperer la valeur ds le query string de l'URL
 // Puis on stocke la valeur de l'id ds une variable (ex: ?id=243)
@@ -25,7 +26,7 @@ async function displayData(photographers, sum) {
   const photographerModel = photographerFactory(photographers);
   const userHeaderDOM = photographerModel.getUserHeaderDOM();
   photographHeader.innerHTML = userHeaderDOM;
-  console.log(photographerModel);
+  // console.log(photographerModel);
 
   const counterWrapper = document.querySelector('.counter-wrapper');
   const UserLikesPrice = photographerModel.getUserLikesPrice();
@@ -77,7 +78,7 @@ async function init() {
   const mediaById = media.filter(
     (el) => el.photographerId === photographerUrlId
   );
-  // console.log(mediaById);
+  console.log(mediaById);
 
   const arrayLikes = mediaById.map((el) => el.likes);
   // console.log(arrayLikes);
@@ -96,6 +97,8 @@ async function init() {
 
   const photographerName = photographerById.name;
   modal(photographerName);
+
+  lightbox(mediaById);
 }
 
 init();

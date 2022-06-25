@@ -10,9 +10,6 @@
   padding-right: 2.5rem;
 }
 
-/* .photographer-infos {
-} */
-
 .photographer-infos h2 {
   color: #d3573c;
   font-size: 3rem;
@@ -69,6 +66,7 @@
   height: 300px;
   object-fit: cover;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .card-video {
@@ -76,6 +74,7 @@
   width: 350px;
   height: 300px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card-content {
@@ -107,6 +106,7 @@
 .heart-wrapper .heart {
   position: absolute;
   right: 0;
+  cursor: pointer;
 }
 
 .heart-wrapper .heart-plain.hidden {
@@ -121,7 +121,7 @@
   align-items: center;
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 40px;
   background-color: #db8876;
   width: 375px;
   height: 70px;
@@ -197,7 +197,7 @@ form div {
 }
 
 form input {
-  width: 100%;
+  width: 97%;
   height: 68px;
   border: none;
   border-radius: 5px;
@@ -222,7 +222,7 @@ form input {
 .sortSelect {
   width: 170px;
   height: 60px;
-  padding: 20px;
+  padding-left: 20px;
   font-size: 18px;
   color: white;
   font-weight: 600;
@@ -233,4 +233,78 @@ form input {
 
 .sortOption {
   background-color: aqua;
+}
+
+/****************** LIGHTBOX SECTION ********************/
+
+.lightbox {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: white;
+}
+
+.lightbox-wrapper {
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#lightbox-image {
+  /* height: 70vh; */
+  max-height: 70vh;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+#lightbox-video {
+  /* height: 70vh; */
+  max-height: 70vh;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+#lightbox-prev,
+#lightbox-next {
+  font-size: 50px;
+  color: #901c1c;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 300ms;
+}
+
+#lightbox-prev:hover,
+#lightbox-next:hover {
+  opacity: 1;
+}
+
+#lightbox-prev {
+  margin-right: 30px;
+}
+
+#lightbox-next {
+  margin-left: 30px;
+}
+
+#close-lightbox {
+  position: absolute;
+  /* margin-left: 20px; */
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+
+#lightbox-title {
+  text-align: left;
+  color: #901c1c;
+  font-size: 1.3rem;
 }
