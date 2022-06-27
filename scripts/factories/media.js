@@ -10,7 +10,7 @@ export function mediaFactory(data) {
   function getUserImageCardDOM() {
     const templatePhotographerImage = `
     <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
-      <img src="${photographerImage}" class="card-image" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
+      <img src="${photographerImage}" alt="${title}" class="card-image" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
       <div class="card-content">
         <h3>${title}</h3>
         <div class="heart-wrapper">

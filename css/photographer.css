@@ -10,7 +10,7 @@
   padding-right: 2.5rem;
 }
 
-.photographer-infos h2 {
+.photographer-infos h1 {
   color: #d3573c;
   font-size: 3rem;
   font-weight: 400;
@@ -37,6 +37,11 @@
   background-color: #901c1c;
   border-radius: 5px;
   cursor: pointer;
+}
+
+.contact_button:hover {
+  background-color: #db8876;
+  color: black;
 }
 
 .photograph-header img {

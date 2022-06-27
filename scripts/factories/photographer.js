@@ -12,6 +12,7 @@ export function photographerFactory(data) {
     link.setAttribute('href', `photographer.html?id=${id}`);
     const img = document.createElement('img');
     img.setAttribute('src', picture);
+    img.setAttribute('alt', `photographer ${name}`);
     const h2 = document.createElement('h2');
     h2.textContent = name;
     const div = document.createElement('div');
@@ -32,14 +33,14 @@ export function photographerFactory(data) {
   function getUserHeaderDOM() {
     const templatePhotographHeader = `
     <div class='photographer-infos'>
-      <h2 tabindex="0">${name}</h2>
+      <h1 tabindex="0">${name}</h1>
       <div tabindex="0">
         <p class="photographer-city">${city}, ${country}</p>
         <p class="photographer-tagline">${tagline}</p>
       </div>
     </div>
     <button id="photographer-contact" class="contact_button" title='Contact Me' aria-label="Contact Me">Contactez-moi</button>
-    <a href='#' title='${name}'><img src="${picture}" aria-label="${name}" title="${name}" alt=""></a>
+    <div title='${name}'><img src="${picture}" alt="photographer ${name}" aria-label="${name}" title="${name}" alt=""></div>
     `;
 
     return templatePhotographHeader;
