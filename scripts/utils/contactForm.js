@@ -5,9 +5,9 @@
 
 export function modal(name) {
   const modal = document.querySelector('#contact_modal');
+  const form = document.getElementById('form');
   const btnContact = document.getElementById('photographer-contact');
   const btnClose = document.getElementById('btnClose');
-  const btnSend = document.getElementById('btnSend');
 
   const modalTitle = document.getElementById('modal-title');
 
@@ -16,30 +16,47 @@ export function modal(name) {
   const email = document.getElementById('email');
   const message = document.getElementById('message');
 
+  const body = document.querySelector('body');
+  let previouslyFocusElement = null;
+
   modalTitle.innerHTML = `Contactez-moi <br /> ${name}`;
 
-  btnContact.addEventListener('click', () => {
-    modal.style.display = 'block';
-  });
-
-  btnClose.addEventListener('click', () => {
+  const closeModal = (e) => {
+    if (previouslyFocusElement !== null) {
+      previouslyFocusElement.focus();
+    }
+    form.reset();
+    modal.setAttribute('aria-hidden', 'true');
+    body.classList.remove('no-scroll');
     modal.style.display = 'none';
+  };
+
+  const openModal = (e) => {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    previouslyFocusElement = document.querySelector(':focus');
+    firstName.focus();
+    body.classList.add('no-scroll');
+  };
+
+  btnContact.addEventListener('click', openModal);
+
+  btnClose.addEventListener('click', closeModal);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' || e.key === 'Esc') {
+      closeModal(e);
+    }
   });
 
-  btnSend.addEventListener('click', send);
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
 
-  function send(event) {
-    event.preventDefault();
     console.log(`First Name: ${firstName.value}`);
     console.log(`Last Name: ${lastName.value}`);
     console.log(`Email: ${email.value}`);
     console.log(`Message: ${message.value}`);
 
-    firstName.value = '';
-    lastName.value = '';
-    email.value = '';
-    message.value = '';
-
-    modal.style.display = 'none';
-  }
+    closeModal();
+  });
 }

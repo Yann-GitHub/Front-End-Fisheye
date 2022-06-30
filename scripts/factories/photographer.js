@@ -40,7 +40,7 @@ export function photographerFactory(data) {
       </div>
     </div>
     <button id="photographer-contact" class="contact_button" title='Contact Me' aria-label="Contact Me">Contactez-moi</button>
-    <div title='${name}'><img src="${picture}" alt="photographer ${name}" aria-label="${name}" title="${name}" alt=""></div>
+    <div title='${name}'><img src="${picture}" alt="photographer ${name}" aria-label="${name}" title="${name}" tabindex="0" ></div>
     `;
 
     return templatePhotographHeader;
@@ -50,7 +50,7 @@ export function photographerFactory(data) {
     const templateLikesPrice = `
     <div>
       <span class="counter"></span>
-      <i class="fas fa-heart heart"></i>
+      <i class="fas fa-heart heart" aria-label="likes"></i>
     </div>
     <div>
       <span>${price}€ / jour</span>

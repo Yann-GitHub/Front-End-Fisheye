@@ -11,6 +11,7 @@ export function lightbox(data) {
   const lightboxImage = document.getElementById('lightbox-image');
   const lightboxvideo = document.getElementById('lightbox-video');
   const lightboxTitle = document.getElementById('lightbox-title');
+  let previouslyFocusElement = null;
 
   const photographerMedias = document.querySelectorAll(
     '#photographer-grid > article > img, #photographer-grid > article > video'
@@ -19,9 +20,21 @@ export function lightbox(data) {
   photographerMedias.forEach((photographerMedia) => {
     photographerMedia.addEventListener('click', (media) => {
       lightbox.style.display = 'flex';
+      lightbox.setAttribute('aria-hidden', 'false');
+      previouslyFocusElement = document.querySelector(':focus');
       const imageDatasetId = media.target.dataset.id;
       // console.log(imageDatasetId);
       displayLightbox(data, imageDatasetId);
+    });
+    photographerMedia.addEventListener('keydown', (media) => {
+      if (media.key === 'Enter') {
+        lightbox.style.display = 'flex';
+        lightbox.setAttribute('aria-hidden', 'false');
+        previouslyFocusElement = document.querySelector(':focus');
+        const imageDatasetId = media.target.dataset.id;
+        // console.log(imageDatasetId);
+        displayLightbox(data, imageDatasetId);
+      }
     });
   });
 
@@ -36,17 +49,19 @@ export function lightbox(data) {
       lightboxTitle.innerText = `${data[mediaIndex].title}`;
       lightboxImage.style.display = 'flex';
       lightboxvideo.style.display = 'none';
+      btnPrev.focus();
     } else {
       lightboxvideo.setAttribute(
         'src',
         `./assets/images/${data[mediaIndex].photographerId}/${data[mediaIndex].video}`
       );
-      lightboxvideo.style.display = 'initial';
+      lightboxvideo.style.display = 'flex';
       lightboxImage.style.display = 'none';
+      btnPrev.focus();
       lightboxTitle.innerText = `${data[mediaIndex].title}`;
     }
 
-    btnNext.addEventListener('click', () => {
+    const nextAction = (e) => {
       mediaIndex =
         mediaIndex < data.length - 1 ? (mediaIndex += 1) : (mediaIndex = 0);
       if (data[mediaIndex].image) {
@@ -66,9 +81,21 @@ export function lightbox(data) {
         lightboxImage.style.display = 'none';
         lightboxTitle.innerText = `${data[mediaIndex].title}`;
       }
+    };
+
+    btnNext.addEventListener('click', nextAction);
+    btnNext.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        nextAction();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        nextAction();
+      }
     });
 
-    btnPrev.addEventListener('click', () => {
+    const previousAction = (e) => {
       mediaIndex =
         mediaIndex > 0 ? (mediaIndex -= 1) : (mediaIndex = data.length - 1);
       if (data[mediaIndex].image) {
@@ -84,14 +111,42 @@ export function lightbox(data) {
           'src',
           `./assets/images/${data[mediaIndex].photographerId}/${data[mediaIndex].video}`
         );
-        lightboxvideo.style.display = 'initial';
+        lightboxvideo.style.display = 'flex';
         lightboxImage.style.display = 'none';
         lightboxTitle.innerText = `${data[mediaIndex].title}`;
       }
+    };
+
+    btnPrev.addEventListener('click', previousAction);
+    btnPrev.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        previousAction();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        previousAction();
+      }
     });
 
-    btnClose.addEventListener('click', () => {
+    const closeAction = (e) => {
+      if (previouslyFocusElement !== null) {
+        previouslyFocusElement.focus();
+      }
       lightbox.style.display = 'none';
+      lightbox.setAttribute('aria-hidden', 'true');
+    };
+
+    btnClose.addEventListener('click', closeAction);
+    btnClose.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        closeAction();
+      }
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Esc' || e.key === 'Escape') {
+        closeAction();
+      }
     });
   };
 }

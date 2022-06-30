@@ -26,5 +26,21 @@ export function likeManagement() {
       globalLikesCounter.textContent = globalLikesCounterNumber;
       likesPerImage.textContent = likesPerImageNumber;
     });
+    heart.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        console.log('rrr');
+        if (heart.classList.contains('hidden')) {
+          heart.classList.remove('hidden');
+          globalLikesCounterNumber++;
+          likesPerImageNumber++;
+        } else {
+          heart.classList.add('hidden');
+          globalLikesCounterNumber--;
+          likesPerImageNumber--;
+        }
+        globalLikesCounter.textContent = globalLikesCounterNumber;
+        likesPerImage.textContent = likesPerImageNumber;
+      }
+    });
   });
 }
