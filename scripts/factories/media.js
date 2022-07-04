@@ -10,13 +10,13 @@ export function mediaFactory(data) {
   function getUserImageCardDOM() {
     const templatePhotographerImage = `
     <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
-      <img src="${photographerImage}" alt="${title}" class="card-image" tabindex="0" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
+      <img src="${photographerImage}" alt="${title}, closeup view" class="card-image" role="link" tabindex="0" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
       <div class="card-content">
         <h3>${title}</h3>
         <div class="heart-wrapper">
           <p>${likes}</p>
           <i class="far fa-heart heart"></i>
-          <i class="fas fa-heart heart heart-plain hidden" tabindex="0"></i>
+          <i class="fas fa-heart heart heart-plain hidden" role="button" aria-label="like" tabindex="0"></i>
         </div>
       </div>
     </article>
@@ -28,7 +28,7 @@ export function mediaFactory(data) {
   function getUserVideoCardDOM() {
     const templatePhotographerVideo = `
     <article class='card' data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
-      <video class="card-video" tabindex="0" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
+      <video class="card-video" tabindex="0" role= "link" aria-label="${title}, closeup view" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}">
         <source src="${photographerVideo}" type="video/mp4" data-id="${id}" data-date="${date}" data-photographerId="${photographerId}" data-price="${price}" data-likes="${likes}" data-title="${title}" />
       </video>
       <div class="card-content">
@@ -36,7 +36,7 @@ export function mediaFactory(data) {
         <div class="heart-wrapper">
           <p>${likes}</p>
           <i class="far fa-heart heart"></i>
-          <i class="fas fa-heart heart heart-plain hidden"></i>
+          <i class="fas fa-heart heart heart-plain hidden" role="button" aria-label="like" tabindex="0"></i>
         </div>
       </div>
     </article>

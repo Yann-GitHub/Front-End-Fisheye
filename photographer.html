@@ -23,23 +23,42 @@
         <img
           src="assets/images/logo.png"
           class="logo"
+          role="link"
           alt="Fisheye Home Page"
         />
       </a>
     </header>
     <main id="main">
       <div class="photograph-header">
-        <button class="contact_button" onclick="displayModal()">
+        <button
+          class="contact_button"
+          aria-label="contact me"
+          onclick="displayModal()"
+        >
           Contactez-moi
         </button>
       </div>
       <section class="sort-images">
-        <label>Triez par</label>
-        <select name="" id="selectorType" class="sortSelect">
-          <option value="popularité" class="sortOption">Popularité</option>
-          <option value="date" class="sortOption">Date</option>
-          <option value="titre" class="sortOption">Titre</option>
-        </select>
+        <p id="sort-label">Trier par</p>
+        <div id="sort-select">
+          <button
+            id="sort-media-button"
+            role="button"
+            aria-label="order by"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            <span id="sort-media-button-text">Popularité</span>
+            <i class="fas fa-chevron-down" id="sort-media-button-icon"></i>
+          </button>
+          <ul id="sort-media-list" class="sort-media-list" role="listbox">
+            <li id="popularite" class="sort-media-option" tabindex="0">
+              Popularité<i class="fas fa-chevron-down"></i>
+            </li>
+            <li id="date" class="sort-media-option" tabindex="0">Date</li>
+            <li id="titre" class="sort-media-option" tabindex="0">Titre</li>
+          </ul>
+        </div>
       </section>
       <section id="photographer-grid"></section>
     </main>
@@ -47,7 +66,12 @@
       <div class="modal">
         <header>
           <h2 id="modal-title">Contactez-moi</h2>
-          <img id="btnClose" src="assets/icons/close.svg" />
+          <img
+            id="btnClose"
+            src="assets/icons/close.svg"
+            role="button"
+            aria-label="close contact form"
+          />
         </header>
         <form id="form">
           <div class="formData">
@@ -90,7 +114,13 @@
               required
             />
           </div>
-          <button type="submit" class="contact_button" id="btnSend">
+          <button
+            type="submit"
+            class="contact_button"
+            id="btnSend"
+            role="button"
+            aria-label="send"
+          >
             Envoyer
           </button>
         </form>
@@ -105,7 +135,13 @@
       role="dialog"
     >
       <div class="lightbox-wrapper">
-        <i id="lightbox-prev" class="fas fa-chevron-left" tabindex="0"></i>
+        <i
+          id="lightbox-prev"
+          class="fas fa-chevron-left"
+          role="link"
+          aria-label="image précédente"
+          tabindex="0"
+        ></i>
         <div id="lightbox-media">
           <img id="lightbox-image" src="" />
           <video id="lightbox-video" tabindex="-1" controls autoplay loop muted>
@@ -115,12 +151,27 @@
         </div>
 
         <div class="lightbox-aside">
+          <i
+            id="lightbox-next"
+            class="fas fa-chevron-right"
+            role="link"
+            aria-label="image suivante"
+            tabindex="0"
+          ></i>
           <img
             id="close-lightbox"
             src="./assets/icons/close.svg"
+            role="button"
+            aria-label="fermer la boite de dialogue"
             tabindex="0"
           />
-          <i id="lightbox-next" class="fas fa-chevron-right" tabindex="0"></i>
+          <!-- <i
+            id="lightbox-next"
+            class="fas fa-chevron-right"
+            role="link"
+            aria-label="image suivante"
+            tabindex="0"
+          ></i> -->
         </div>
       </div>
     </div>
