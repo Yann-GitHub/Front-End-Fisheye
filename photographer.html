@@ -18,7 +18,7 @@
     <title>Fisheye - photographe</title>
   </head>
   <body>
-    <header role="banner">
+    <header>
       <a href="./index.html">
         <img
           src="assets/images/logo.png"
@@ -43,17 +43,19 @@
         <div id="sort-select">
           <button
             id="sort-media-button"
-            role="button"
             aria-label="order by"
             aria-haspopup="listbox"
             aria-expanded="false"
           >
             <span id="sort-media-button-text">Popularité</span>
-            <i class="fas fa-chevron-down" id="sort-media-button-icon"></i>
+            <span
+              class="fas fa-chevron-down"
+              id="sort-media-button-icon"
+            ></span>
           </button>
           <ul id="sort-media-list" class="sort-media-list" role="listbox">
             <li id="popularite" class="sort-media-option" tabindex="0">
-              Popularité<i class="fas fa-chevron-down"></i>
+              Popularité<span class="fas fa-chevron-down"></span>
             </li>
             <li id="date" class="sort-media-option" tabindex="0">Date</li>
             <li id="titre" class="sort-media-option" tabindex="0">Titre</li>
@@ -68,6 +70,7 @@
           <h2 id="modal-title">Contactez-moi</h2>
           <img
             id="btnClose"
+            alt="fermer"
             src="assets/icons/close.svg"
             role="button"
             aria-label="close contact form"
@@ -118,7 +121,6 @@
             type="submit"
             class="contact_button"
             id="btnSend"
-            role="button"
             aria-label="send"
           >
             Envoyer
@@ -135,43 +137,37 @@
       role="dialog"
     >
       <div class="lightbox-wrapper">
-        <i
+        <span
           id="lightbox-prev"
           class="fas fa-chevron-left"
           role="link"
           aria-label="image précédente"
           tabindex="0"
-        ></i>
+        ></span>
         <div id="lightbox-media">
-          <img id="lightbox-image" src="" />
+          <img id="lightbox-image" alt="lightbox-image" src="#" />
           <video id="lightbox-video" tabindex="-1" controls autoplay loop muted>
-            <source id="video" src="" type="video/mp4" />
+            <source id="video" src="#" type="video/mp4" />
           </video>
           <p id="lightbox-title">Ceci est un test, that's it!</p>
         </div>
 
         <div class="lightbox-aside">
-          <i
+          <span
             id="lightbox-next"
             class="fas fa-chevron-right"
             role="link"
             aria-label="image suivante"
             tabindex="0"
-          ></i>
+          ></span>
           <img
             id="close-lightbox"
+            alt="fermer"
             src="./assets/icons/close.svg"
             role="button"
             aria-label="fermer la boite de dialogue"
             tabindex="0"
           />
-          <!-- <i
-            id="lightbox-next"
-            class="fas fa-chevron-right"
-            role="link"
-            aria-label="image suivante"
-            tabindex="0"
-          ></i> -->
         </div>
       </div>
     </div>

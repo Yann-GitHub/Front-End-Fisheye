@@ -1,4 +1,4 @@
-// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html
+// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html via displayData()
 // Les datas sont d'abord assignées à des variables
 // Les différentes méthodes correspondent aux différents templates dédiés aux différentes sections de la page html (header, card, compteur globlal de likes)
 export function photographerFactory(data) {

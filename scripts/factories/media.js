@@ -1,4 +1,4 @@
-// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html via la fonction displayData
+// Fonction factory en charge de générer un template (avec les datas spécifiées en paramètre) qui sera par la suite injecter dans le html via la fonction displayMedia()
 // Les datas sont d'abord assignées à des variables
 // Les différentes méthodes correspondent aux différents templates dédiés aux différent types de medias (images, videos)
 export function mediaFactory(data) {

@@ -58,10 +58,12 @@ async function displayMedia(media) {
   });
 }
 
-// Fonction appelée au chargement de la page
+// Fonction appelée au chargement de la page (init)
 // Elle récupère ds 1 premier temps les datas du fichier json via un Fetch
-// Elle selectionne les datas correspondant à l'id du photographe contenue dans l'url de la page
+// Elle selectionne les datas correspondant à l'id du photographe contenue dans l'url de la page (infos photographer, medias photographer)
+// Elle recupère le nombre de like sur chq media et en fait la somme (sumLikes)
 // Elle appelle les 2 fonctions précédentes pour générer les templates correspondant et les injecter dans la page Html
+// Elle appelle les fonctions qui gèrent la modal-contact, la lightbox, le like-management, le tri des medias
 
 // find() renvoie la valeur du premier élément trouvé dans le tableau qui respecte la condition donnée (photographerById)
 // filter() crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine qui remplissent une condition déterminée (mediaById)
@@ -78,7 +80,7 @@ async function init() {
   const mediaById = media.filter(
     (el) => el.photographerId === photographerUrlId
   );
-  console.log(mediaById);
+  // console.log(mediaById);
 
   const arrayLikes = mediaById.map((el) => el.likes);
   // console.log(arrayLikes);

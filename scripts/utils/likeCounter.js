@@ -28,7 +28,6 @@ export function likeManagement() {
     });
     heart.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        console.log('rrr');
         if (heart.classList.contains('hidden')) {
           heart.classList.remove('hidden');
           globalLikesCounterNumber++;

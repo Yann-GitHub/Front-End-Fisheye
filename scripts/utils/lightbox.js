@@ -1,7 +1,9 @@
-// Fonction qui prend en paramètre tous les medias d'un photographe selectionnés via son id (photographer.js)
-// Via une boucle forEach() on ajoute sur chq card un event listener et une fonction displayLightbox() qui rprend en parametre tous les medias et l'id du media cliqué via attribut data-id
+// Fonction qui prend en paramètre tous les medias (images, videos) d'un photographe selectionnés via son id (photographer.js)
+// Avec une boucle forEach() on ajoute sur chq card un eventListener, qui ouvre la modal et appelle la fonction displayLightbox()
+// La fonction displayLightbox() qui prend en parametre tous les medias et l'id du media cliqué via attribut data-id
 // La fonction displayLightbox() se charge d'afficher le media en fonction de son id et en fonction de son type (image, video).
-// Elle gére également le comportement des btn prev, next et close.
+// La fonction displayLightbox() gére également les comportements des btn previous, next et close
+// Ajout des eventListeners permettant la naviguation au clavier, et des attributs ARIA necessaires au standard d'accessibilité
 
 export function lightbox(data) {
   const lightbox = document.getElementById('lightbox-section');

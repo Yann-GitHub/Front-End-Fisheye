@@ -1,5 +1,7 @@
 // Fonction en charge du tri des medias selon 3 critères (titre, popularité, date)
 // sort() trie les éléments d'un tableau, dans ce même tableau, et renvoie le tableau.
+// La fonction sortBy utilise les attributs data comme référence pour le classement
+// Ajout des eventListeners au clic et au clavier, et des attributs ARIA necessaires au standard d'accessibilité
 export function sortMedias() {
   const gridMedia = document.querySelector('#photographer-grid');
   const sortMediaList = document.getElementById('sort-media-list');
@@ -68,21 +70,21 @@ export function sortMedias() {
   popularite.addEventListener('click', sortBy);
   popularite.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      console.log('jfjf');
+      // console.log('test');
       sortBy(e);
     }
   });
   date.addEventListener('click', sortBy);
   date.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      console.log('jfjf');
+      // console.log('test');
       sortBy(e);
     }
   });
   titre.addEventListener('click', sortBy);
   titre.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
-      console.log('jfjf');
+      // console.log('test');
       sortBy(e);
     }
   });

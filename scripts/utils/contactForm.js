@@ -1,7 +1,8 @@
 // Fonction en charge de la gestion de la modal de contact, elle prend en parametre le nom du photographe
 // Le nom du photographe est ajouté dans l'entête de la modal
 // Des eventlisteners sont ajoutés sur le btn contact et btn close, et permettent de changer le display de la modal (none / block)
-// Un eventlistenr est ajouté sur le btn send avec une fonction en charge de console.log les datas entrées par le user puis de fermer la modal
+// Un eventlistener est ajouté sur le btn send avec une fonction en charge de console.log les datas entrées par le user puis de fermer la modal
+// Gestion attributs ARIA et eventlistener clavier
 
 export function modal(name) {
   const modal = document.querySelector('#contact_modal');
